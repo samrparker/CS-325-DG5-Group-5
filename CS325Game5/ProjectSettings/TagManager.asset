@@ -13,8 +13,8 @@ TagManager:
   - UI
   - Player
   - Terrain
-  - 
-  - 
+  - Furniture
+  - Floor
   - 
   - 
   - 
@@ -41,11 +41,17 @@ TagManager:
   - name: Background
     uniqueID: 3756709615
     locked: 0
-  - name: Default
-    uniqueID: 0
+  - name: Floor
+    uniqueID: 2846216157
     locked: 0
   - name: Terrain
     uniqueID: 1683615029
+    locked: 0
+  - name: Furniture
+    uniqueID: 3231199093
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
   - name: Player
     uniqueID: 1850179519

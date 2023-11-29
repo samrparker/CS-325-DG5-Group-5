@@ -41,10 +41,10 @@ public class PlayerMovement : MonoBehaviour
         Vector3 relative = trans.InverseTransformPoint(cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0)));
         relative.z = 0;
         float angle = Mathf.Atan2(relative.x, relative.y) * Mathf.Rad2Deg;
-
+        
+        Quaternion target = Quaternion.Euler(0, 0, -angle+previousAngle.z);
         if(angle != 0){
 
-            Quaternion target = Quaternion.Euler(0, 0, -angle+previousAngle.z);
             transform.rotation = target;
             previousAngle.z = (-angle + previousAngle.z) % 360;
         }
@@ -55,13 +55,14 @@ public class PlayerMovement : MonoBehaviour
         rigidBody.velocity = new Vector2(directionX * 7f, directionY * 7f);
 
         playerGun.UpdateReticle();
+        playerGun.SetRelative(relative);
 
-        /*if(Input.GetKeyDown("W")){
-            rigidBody.velocity = new Vector3(0, 1, 0);
+        if(Input.GetAxisRaw("Fire1") == 1){
+            float sinRad = (angle+previousAngle.z + 90) * Mathf.Deg2Rad;
+            float cosRad = (angle+previousAngle.z + 90) * Mathf.Deg2Rad;
+
+            playerGun.Fire(Mathf.Cos(cosRad), Mathf.Sin(sinRad), target);
         }
-        else{
-            rigidBody.velocity = new Vector3(0, 0, 0);
-        }*/
         Vector3 cameraPosition = trans.position;
         cameraPosition.z = -10;
         cameraTransform.position = cameraPosition;
