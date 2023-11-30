@@ -16,6 +16,8 @@ public class PlayerGun : MonoBehaviour
 
     private int shootCooldown;
 
+    public GameObject gunNoise;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +54,8 @@ public class PlayerGun : MonoBehaviour
 
                 if(!bullets[z].fired){
                     
+                    AudioSource gunSource = gunNoise.GetComponent<AudioSource>();
+                    gunSource.Play();
                     shootCooldown = 300;
                     Vector3 bulletPosition = transform.position;
                     bullets[z].SetPosition(bulletPosition);

@@ -17,6 +17,11 @@ public class PlayerMovement : MonoBehaviour
 
     private PlayerGun playerGun;
 
+    public int zone;
+    public Zone currentZone;
+    
+    //public AudioSource music;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -66,6 +71,5 @@ public class PlayerMovement : MonoBehaviour
         Vector3 cameraPosition = trans.position;
         cameraPosition.z = -10;
         cameraTransform.position = cameraPosition;
-
     }
 }

@@ -48,10 +48,15 @@ public class Bullet : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision){
-        Debug.Log("COLLIDE");
 
         if(collision.gameObject.name == "HouseTileMap"){
             Disable();
+        }
+        if(collision.gameObject.name.Contains("Zombie")){
+            Disable();
+            if(collision.gameObject.GetComponent<ZombiePathFinding>().Die()){
+                collision.gameObject.SetActive(false);
+            }
         }
     }
 }

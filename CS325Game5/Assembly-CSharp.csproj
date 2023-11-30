@@ -40,6 +40,11 @@
      <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\Scenes\SceneLoading.cs" />
      <Compile Include="Assets\Scripts\Player\Bullet.cs" />
+     <Compile Include="Assets\Scripts\ZombiePathFinding.cs" />
+     <Compile Include="Assets\Scripts\Zone.cs" />
+     <Compile Include="Assets\TelePointer.cs" />
+     <Compile Include="Assets\ZombieManager.cs" />
+     <Compile Include="Assets\LevelManager.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
